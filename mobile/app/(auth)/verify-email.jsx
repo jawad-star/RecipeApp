@@ -23,9 +23,7 @@ const VerifyEmail = ({ email, onBack }) => {
 
     setLoading(true);
     try {
-      const signUpAttempt = await signUp.attemptEmailAddressVerification({
-        code,
-      });
+      const signUpAttempt = await signUp.attemptEmailAddressVerification({ code });
 
       if (signUpAttempt.status === "complete") {
         await setActive({ session: signUpAttempt.createdSessionId });
@@ -63,9 +61,7 @@ const VerifyEmail = ({ email, onBack }) => {
 
           {/* Title */}
           <Text style={authStyles.title}>Verify Your Email</Text>
-          <Text style={authStyles.subtitle}>
-            We&apos;ve sent a verification code to {email}
-          </Text>
+          <Text style={authStyles.subtitle}>We&apos;ve sent a verification code to {email}</Text>
 
           <View style={authStyles.formContainer}>
             {/* Verification Code Input */}
@@ -83,17 +79,12 @@ const VerifyEmail = ({ email, onBack }) => {
 
             {/* Verify Button */}
             <TouchableOpacity
-              style={[
-                authStyles.authButton,
-                loading && authStyles.buttonDisabled,
-              ]}
+              style={[authStyles.authButton, loading && authStyles.buttonDisabled]}
               onPress={handleVerification}
               disabled={loading}
               activeOpacity={0.8}
             >
-              <Text style={authStyles.buttonText}>
-                {loading ? "Verifying..." : "Verify Email"}
-              </Text>
+              <Text style={authStyles.buttonText}>{loading ? "Verifying..." : "Verify Email"}</Text>
             </TouchableOpacity>
 
             {/* Back to Sign Up */}
