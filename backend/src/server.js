@@ -73,3 +73,4 @@ app.delete("/api/favorites/:userId/:recipeId", async (req, res) => {
 app.listen(PORT, () => {
   console.log("server is running123 in port :", PORT);
 });
+export default app;
