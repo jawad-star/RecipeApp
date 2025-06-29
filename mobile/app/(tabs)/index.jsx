@@ -16,7 +16,6 @@ import { Ionicons } from "@expo/vector-icons";
 import CategoryFilter from "../../components/CategoryFilter";
 import RecipeCard from "../../components/RecipeCard";
 
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const HomeScreen = () => {
@@ -92,8 +91,6 @@ const HomeScreen = () => {
   useEffect(() => {
     loadData();
   }, []);
-
- 
 
   return (
     <View style={homeStyles.container}>
