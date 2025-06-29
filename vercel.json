@@ -1,5 +1,4 @@
 {
-  "projects": {},
   "builds": [
     {
       "src": "backend/src/server.js",
